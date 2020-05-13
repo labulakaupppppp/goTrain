@@ -127,16 +127,20 @@ var variable_name [SIZE1][SIZE2]...[SIZEN] variable_type
 var balance = [5]float32{1000.0, 2.0, 3.4, 7.0, 50.0}
 ### 7.指针
 取地址 &a   如： 20818a220
-什么是指针
+#### 什么是指针
 一个指针变量指向了一个值的内存地址。
-类似于变量和常量，在使用指针前你需要声明指针。指针声明格式如下：
+类似于变量和常量，在使用指针前你需要声明指针。指针声明格式如下
+```
 var var_name *var-type
 var-type 为指针类型，var_name 为指针变量名，* 号用于指定变量是作为一个指针。以下是有效的指针声明：
 var ip *int        /* 指向整型*/
 var fp *float32    /* 指向浮点型 */
-package main
+```
+
+
 示例
 ```
+package main
 import "fmt"
 func main() {
    var a int= 20   /* 声明实际变量 */
@@ -211,7 +215,9 @@ func main() {
 结构体.成员名"
 赋值： Book1.title = "Go 语言"
 打印： fmt.Printf( "Book 1 title : %s\n", Book1.title)    //Book 1 title : Go 语言
---------------------------------------------------------------------------------
+
+***
+
 ### 9.切片(Slice)
 https://www.runoob.com/go/go-slice.html
 Go 语言切片是对数组的抽象。
@@ -350,6 +356,6 @@ mean 的值为: 3.400000
 ### 14.接口
 interface
 ### 15 并发：
-go 函数名( 参数列表 )
-ch := make(chan int)// 通道
+go 函数名( 参数列表 )<br>
+ch := make(chan int)// 通道<br>
 ch := make(chan int, 100) //通道缓冲区

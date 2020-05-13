@@ -57,12 +57,15 @@ var a chan int
 var a func(string) int
 var a error // error 是接口
 var d = true 可根据赋值的类型判断变量的类型
-f := "Runoob"  （省略var）```
+f := "Runoob"  （省略var）
+```
 #### 相同类型多变量
-```var vname1, vname2, vname3 type
+```
+var vname1, vname2, vname3 type
 vname1, vname2, vname3 = v1, v2, v3
 var vname1, vname2, vname3 = v1, v2, v3
-vname1, vname2, vname3 := v1, v2, v3```
+vname1, vname2, vname3 := v1, v2, v3
+```
 #### 值类型和引用类型
 当使用等号 = 将一个变量的值赋值给另一个变量时，如：j = i，实际上是在内存中将 i 的值进行了拷贝：
 可以通过 &i 来获取变量 i 的内存地址
@@ -133,6 +136,7 @@ var ip *int        /* 指向整型*/
 var fp *float32    /* 指向浮点型 */
 package main
 示例
+```
 import "fmt"
 func main() {
    var a int= 20   /* 声明实际变量 */
@@ -144,9 +148,12 @@ func main() {
    /* 使用指针访问值 */
    fmt.Printf("*ip 变量的值: %d\n", *ip )//*ip 变量的值: 20
 }
+```
 空指针判断：
+```
 if(ptr != nil)     /* ptr 不是空指针 */
 if(ptr == nil)    /* ptr 是空指针 */
+
 整型指针数组的声明：
 var ptr [MAX]*int;
 指向指针的指针变量声明格式如下：（可以不断叠加*的个数表示指向指针的指针的指针...）
@@ -158,19 +165,23 @@ a = 3000
    /* 指向指针 ptr 地址 */
    pptr = &ptr
 --------------------------------------------------------------------------------
+```
 ### 8.结构体
 结构体格式：
+```
 type struct_variable_type struct {
    member definition
    member definition
    ...
    member definition
 }
+```
 一旦定义了结构体类型，它就能用于变量的声明，语法格式如下：
 variable_name := structure_variable_type {value1, value2...valuen}
 或
 variable_name := structure_variable_type { key1: value1, key2: value2..., keyn: valuen}
 示例：
+```
 package main
 
 import "fmt"
@@ -182,7 +193,7 @@ type Books struct {
    book_id int
 }
 
-```
+
 func main() {
 
     // 创建一个新的结构体
@@ -213,6 +224,7 @@ Go 数组的长度不可改变，在特定场景中这样的集合就不太适�
 也可以简写为
 slice1 := make([]type, len)
 切片初始化
+```
 s :=[] int {1,2,3 } 
 s := arr[:]   //s是arr的引用
 s := arr[startIndex:endIndex]  //arr中从下标startIndex到endIndex-1 下的元素创建为一个新的切片
@@ -223,7 +235,7 @@ s :=make([]int,len,cap)  //通过内置函数make()初始化切片s,[]int 标识
 相关函数：
 x = make([]int,3,5)
 fmt.Printf("len=%d cap=%d slice=%v\n",len(x),cap(x),x)  //len=3 cap=5 slice=[0 0 0]
-
+```
 空切片
 ```
 var numbers []int
@@ -254,11 +266,13 @@ numbers = append(numbers, 2,3,4)   //len=5 cap=6 slice=[0 1 2 3 4]
    ```
 ### 10 范围range
 数组：
+```
 nums := []int{2, 3, 4}
 sum := 0
 for _, num := range nums {
     sum += num
 }
+```
 需要index：
 ```
 for i, num := range nums {
@@ -274,6 +288,7 @@ map：
 ```
 ### 11.集合map
 定义map
+```
 /* 声明变量，默认 map 是 nil */
 var map_variable map[key_data_type]value_data_type    //var countryCapitalMap map[string]string /*创建集合 */
 /* 使用 make 函数 */
@@ -290,9 +305,10 @@ map_variable := make(map[key_data_type]value_data_type)  //countryCapitalMap = m
     }
 
  /*删除元素*/ delete(countryCapitalMap, "France")
-
+```
 ### 12 递归
 阶乘
+```
 package main
 
 import "fmt"
@@ -309,11 +325,13 @@ func main() {
     var i int = 15
     fmt.Printf("%d 的阶乘是 %d\n", i, Factorial(uint64(i)))
 }
+```
 ### 13.类型转换
 type_name(expression)
 实例
 以下实例中将整型转化为浮点型，并计算结果，将结果赋值给浮点型变量：
 实例
+```
 package main
 
 import "fmt"
@@ -326,6 +344,7 @@ func main() {
    mean = float32(sum)/float32(count)
    fmt.Printf("mean 的值为: %f\n",mean)
 }
+```
 以上实例执行输出结果为：
 mean 的值为: 3.400000
 ### 14.接口
